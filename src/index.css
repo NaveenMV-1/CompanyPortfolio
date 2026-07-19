@@ -1,13 +1,151 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+#root{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+    color:white;
+
+    background:
+
+    /* Purple glow */
+    radial-gradient(circle at 50% 65%,
+        rgba(155,55,150,.35) 0%,
+        rgba(90,30,100,.22) 22%,
+        transparent 48%
+    ),
+
+    /* Top Glow */
+    radial-gradient(circle at top,
+        rgba(90,60,180,.18),
+        transparent 55%
+    ),
+
+    /* Bottom Glow */
+    radial-gradient(circle at bottom,
+        rgba(255,60,120,.08),
+        transparent 50%
+    ),
+
+    /* Main Gradient */
+    linear-gradient(
+        180deg,
+        #090913 0%,
+        #10101f 18%,
+        #16162c 40%,
+        #241431 70%,
+        #12040d 100%
+    );
+}
+
+/* ===========================
+   SMALL STARS
+=========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.75) .8px, transparent .8px),
+    radial-gradient(circle, rgba(255,255,255,.45) .6px, transparent .6px),
+
+    radial-gradient(circle, rgba(255,255,255,.9) 1.2px, transparent 1.2px),
+    radial-gradient(circle, rgba(255,255,255,.55) .7px, transparent .7px);
+
+    background-size:
+        260px 260px,
+        180px 180px,
+        130px 130px,
+        320px 320px,
+        210px 210px;
+
+    background-position:
+        0 0,
+        70px 120px,
+        30px 40px,
+        180px 40px,
+        100px 170px;
+
+    opacity:.45;
+
+    z-index:-2;
+}
+
+/* ===========================
+   FILM GRAIN
+=========================== */
+
+body::after{
+    content:"";
+    position:fixed;
+    left:-50%;
+    top:-50%;
+    width:200%;
+    height:200%;
+
+    pointer-events:none;
+
+    opacity:.08;
+
+    background-image:
+
+    radial-gradient(rgba(255,255,255,.18) .5px, transparent .5px),
+    radial-gradient(rgba(0,0,0,.15) .5px, transparent .5px);
+
+    background-size:
+        4px 4px,
+        5px 5px;
+
+    background-position:
+        0 0,
+        2px 2px;
+
+    animation:grain 8s steps(8) infinite;
+}
+
+@keyframes grain{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    20%{
+        transform:translate(-2%,-3%);
+    }
+
+    40%{
+        transform:translate(3%,2%);
+    }
+
+    60%{
+        transform:translate(-3%,1%);
+    }
+
+    80%{
+        transform:translate(2%,-2%);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+
 }

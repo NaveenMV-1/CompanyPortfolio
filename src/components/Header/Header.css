@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Goldman:wght@400;700&display=swap');
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-left: 100px;
+  margin-right: 100px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: "Goldman", sans-serif;
+  margin-top: 20px;
+}
+
+/* Nav Links Underline Effect */
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Button "Jump" Hover Effect */
+.btn-draft {
+  /* background: linear-gradient(90deg, #4f46e5, #f97316); */
+  background: #7b469e;
+background: linear-gradient(90deg, rgba(123, 70, 158, 1) 0%, rgba(255, 54, 54, 1) 50%, rgba(255, 175, 64, 1) 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-draft:hover {
+  transform: translateY(-5px); /* The "Jump" */
+}
+/* 
+.btn-draft::after{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+    transform: skewX(-25deg);
+} */
+
+.btn-draft::before {
+  content: "";
+    position: absolute;
+    inset: -50% auto -50% -120%;
+    width: 60px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: transform .5s ease;
+    transform: translateX(0) skewX(-25deg);
+}
+
+.btn-draft:hover::before {
+  transform: translateX(420px) skewX(-25deg);
+}
+/* .btn-draft:hover::after{
+  animation: shine 0.8s ease;
+} */
+
+@keyframes shine {
+    100% {
+        left: 170%;
+    }
+}
+
+.btn-draft:hover {
+    box-shadow:
+        linear-gradient(90deg,rgba(55, 15, 66, 1) 0%, rgba(105, 25, 25, 1) 50%, rgba(140, 98, 29, 1) 100%);
+}
+
