@@ -158,7 +158,7 @@ cards.forEach(card => {
       </div>
 
       <div className="aboutdes">
-        <p>Our commitment to quality has earned trust with every project we deliver.</p>
+        <p>I build fast, modern, and responsive websites that help businesses establish a professional online presence and convert more visitors into customers..</p>
       </div>
 
       <section className="about-section">
@@ -232,7 +232,20 @@ cards.forEach(card => {
         </div>
 
       </section>
-
+    <div className="statics">
+      <div className="sts1">
+        <p><span>10+</span> <br />Projects Built</p>
+      </div>
+      <div className="sts2">
+        <p><span>100%</span> <br />Responsive Websites</p>
+      </div>
+      <div className="sts3">
+        <p><span>24 hrs</span> <br />Average Response Time</p>
+      </div>
+      <div className="sts4">
+       <p><span>∞ </span><br />Passion for Learning</p>
+        </div>
+    </div>
     </div>
 
   )

@@ -31,7 +31,7 @@ function Home() {
         <div className="heading">
         
           <h1>
-  <span className="highlight">Need a Dream website?</span>
+  <span className="highlight">Dream website?</span>
   <br />
 
   You can find it{" "}
