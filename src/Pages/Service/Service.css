@@ -1,0 +1,118 @@
+.process-container {
+  position: relative;
+  /* background-color: #0a0a0a; */
+  color: #ffffff;
+  min-height: 230vh; /* Increased height for 6 cards */
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.process-steps-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 64rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14rem; /* Adjusted gap to keep spacing even across 6 items */
+  margin-top: 3rem;
+}
+
+.process-card-row {
+  display: flex;
+  width: 100%;
+}
+
+.process-card-row.left {
+  justify-content: flex-start;
+}
+
+.process-card-row.right {
+  justify-content: flex-end;
+}
+
+.process-card {
+  width: 24rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(18, 18, 20, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.process-card-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.process-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.process-card p {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.process-cta-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 10rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.process-cta-button {
+  padding: 0.85rem 2rem;
+  border-radius: 9999px;
+  background-color: #121214;
+  color: #ffffff;
+  font-weight: 500;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.2);
+  transition: all 0.3s ease;
+}
+
+.process-cta-button:hover {
+  border-color: rgba(236, 72, 153, 0.8);
+  box-shadow: 0 0 35px rgba(236, 72, 153, 0.4);
+}

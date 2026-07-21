@@ -144,6 +144,209 @@ cards.forEach(card => {
 });
   
 
+gsap.from(".sts1",{
+
+    opacity:0,
+
+    y:120,
+
+    duration:1,
+
+    stagger:.2,
+
+    ease:"power4.out"
+
+});
+gsap.from(".sts2",{
+
+    opacity:0,
+
+    y:120,
+
+    duration:1,
+
+    stagger:.2,
+
+    ease:"power4.out"
+
+});
+gsap.from(".sts3",{
+
+    opacity:0,
+
+    y:120,
+
+    duration:1,
+
+    stagger:.2,
+
+    ease:"power4.out"
+
+});
+gsap.from(".sts4",{
+
+    opacity:0,
+
+    y:120,
+
+    duration:1,
+
+    stagger:.2,
+
+    ease:"power4.out"
+
+});
+const stscards1 = gsap.utils.toArray(".sts1");
+
+stscards1.forEach((card) => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x - rect.width / 2) / rect.width) * 18;
+    const rotateX = ((rect.height / 2 - y) / rect.height) * 18;
+
+    gsap.to(card, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      transformPerspective: 1000,
+      transformOrigin: "center",
+      duration: 0.3
+    });
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    gsap.to(card, {
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.5
+    });
+
+  });
+
+});
+const stscards2 = gsap.utils.toArray(".sts2");
+
+stscards2.forEach((card) => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x - rect.width / 2) / rect.width) * 18;
+    const rotateX = ((rect.height / 2 - y) / rect.height) * 18;
+
+    gsap.to(card, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      transformPerspective: 1000,
+      transformOrigin: "center",
+      duration: 0.3
+    });
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    gsap.to(card, {
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.5
+    });
+
+  });
+
+});
+const stscards3 = gsap.utils.toArray(".sts3");
+
+stscards3.forEach((card) => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x - rect.width / 2) / rect.width) * 18;
+    const rotateX = ((rect.height / 2 - y) / rect.height) * 18;
+
+    gsap.to(card, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      transformPerspective: 1000,
+      transformOrigin: "center",
+      duration: 0.3
+    });
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    gsap.to(card, {
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.5
+    });
+
+  });
+
+});
+const stscards4 = gsap.utils.toArray(".sts4");
+
+stscards4.forEach((card) => {
+
+  card.addEventListener("mousemove", (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x - rect.width / 2) / rect.width) * 18;
+    const rotateX = ((rect.height / 2 - y) / rect.height) * 18;
+
+    gsap.to(card, {
+      rotationY: rotateY,
+      rotationX: rotateX,
+      transformPerspective: 1000,
+      transformOrigin: "center",
+      duration: 0.3
+    });
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    gsap.to(card, {
+      rotationX: 0,
+      rotationY: 0,
+      duration: 0.5
+    });
+
+  });
+
+});
+gsap.from(".card1num",{
+
+textContent:0,
+
+duration:2,
+
+snap:{textContent:1}
+
+})
+
+
   });
 
   return (
@@ -234,13 +437,13 @@ cards.forEach(card => {
       </section>
     <div className="statics">
       <div className="sts1">
-        <p><span>10+</span> <br />Projects Built</p>
+        <p><span className='card1num'>10+</span> <br />Projects Built</p>
       </div>
       <div className="sts2">
-        <p><span>100%</span> <br />Responsive Websites</p>
+        <p><span className='card1num'>100%</span> <br />Responsive Websites</p>
       </div>
       <div className="sts3">
-        <p><span>24 hrs</span> <br />Average Response Time</p>
+        <p><span className='card1num'>24 hrs</span> <br />Average Response Time</p>
       </div>
       <div className="sts4">
        <p><span>∞ </span><br />Passion for Learning</p>
