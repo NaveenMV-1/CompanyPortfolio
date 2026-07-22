@@ -33,7 +33,7 @@ export default function Service() {
         trigger: containerRef.current,
         start: "top center",
         end: "bottom center",
-        scrub: 0.5,
+        scrub: 0.1,
       },
     });
 
@@ -47,7 +47,7 @@ export default function Service() {
         path: path,
         align: path,
         alignOrigin: [0.5, 0.5],
-        autoRotate: true, // Automatically points the arrow along the curve of the path!
+        autoRotate: true,
       },
       ease: "none",
     }, 0);
@@ -78,6 +78,22 @@ export default function Service() {
 
   return (
     <div ref={containerRef} className="process-container">
+      {/* Background Twinkling Space Stars & Sparkles */}
+      <div className="space-stars-field">
+        {[...Array(40)].map((_, i) => (
+          <div 
+            key={i} 
+            className={`space-star star-type-${(i % 3) + 1}`} 
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
+      </div>
+
       <svg
         className="process-svg"
         viewBox="0 0 1200 1900"
@@ -92,10 +108,8 @@ export default function Service() {
           strokeLinecap="round"
         />
         
-        {/* Glowing Arrow Head / Pointer */}
         <g ref={glowRef} className="path-arrow-group">
           <circle r="16" fill="url(#arrowGlow)" />
-          {/* Arrow shape pointing forward */}
           <polygon points="-8,-8 10,0 -8,8 -2,0" fill="#ffffff" />
         </g>
 
@@ -117,10 +131,12 @@ export default function Service() {
           </radialGradient>
         </defs>
       </svg>
+
       <div className="headingservice">
         <h1>Services That Help <span>Your Business Grow</span></h1>
         <p>From simple business websites to custom web applications, I create fast, modern, and responsive digital experiences tailored to your goals.</p>
       </div>
+
       <div className="process-steps-wrapper">
         <div className="process-card-row left">
           <div className="process-card card-one">

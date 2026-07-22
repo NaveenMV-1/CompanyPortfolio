@@ -8,16 +8,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 100px;
+  border-radius: 80px;
+  box-shadow: 0 40px 80px -20px rgba(236, 234, 237, 0.868);
+  filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #38bdf8) drop-shadow(0 0 70px #9333ea);
 }
 
 .process-svg {
-  position: absolute;
+    position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
   z-index: 0;
+  /* Forces anti-aliasing for smooth curved edges */
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
 }
 
 /* Star flare head styling */
@@ -159,7 +166,8 @@
   pointer-events: none;
 }
 .headingservice{
-  background-color: #38bdf8;
+  /* background-color: #38bdf8; */
+  margin-bottom: 20px;
 }
 .headingservice h1{
   margin-left: 150px;
@@ -185,4 +193,69 @@
     -webkit-text-fill-color: transparent;
 
     animation: gradientMove 6s linear infinite;
+}
+/* Background Starry Sky Layout */
+.space-stars-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Individual star properties */
+.space-star {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: starTwinkle infinite ease-in-out;
+}
+
+.star-type-1 {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 4px #ffffff;
+}
+
+.star-type-2 {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 6px #38bdf8;
+}
+
+.star-type-3 {
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 0 8px #a855f7, 0 0 12px #ffffff;
+}
+
+/* Sparkle & Twinkle keyframes */
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+
+/* Ensure smooth rounded corners on path joints */
+.process-svg path {
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+/* Apply hardware acceleration to the inner group */
+.path-arrow-group {
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 30px #38bdf8) drop-shadow(0 0 55px #9333ea);
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
